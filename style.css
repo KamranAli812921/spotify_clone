@@ -83,5 +83,14 @@ background-color: #1f1f1f;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    margin: 30px;
 
+}
+.card{
+    position: relative;
+}
+.play{
+    position: absolute;
+    top: 150px;
+    right: 20px;
 }
