@@ -11,6 +11,10 @@ body
     background-color: black;
     color: white;
 }
+.container
+{
+    height: 100vh;
+}
 .left{
     width: 25vw;
     padding: 10px;
@@ -44,7 +48,7 @@ ul li {
     color: gray;
 }
 .library{
-    min-height: 80vh;
+    min-height: 60vh;
     position: relative;
 }
 .nav img{
@@ -61,7 +65,6 @@ ul li {
     justify-content: space-between;
     padding: 20px;
     background-color: #2a2a2a;
-    margin: 10px;
 }
 .spotify-playlist{
 padding: 16px;
@@ -85,6 +88,9 @@ background-color: #1f1f1f;
     gap: 10px;
     flex-wrap: wrap;
     margin: 30px;
+    max-height: 60vh;
+    box-sizing: border-box;
+    overflow-y: scroll;
 
 }
 .card{
