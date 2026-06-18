@@ -38,6 +38,7 @@ ul li {
     gap: 13px;
     position: absolute;
     bottom: 0;
+    padding: 10px 0;
 }
 .footer a{
     color: gray;
@@ -93,4 +94,6 @@ background-color: #1f1f1f;
     position: absolute;
     top: 150px;
     right: 20px;
+    opacity: 0;
+    transition: all 1s ease-out;
 }
