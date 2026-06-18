@@ -62,3 +62,26 @@ ul li {
     background-color: #2a2a2a;
     margin: 10px;
 }
+.spotify-playlist{
+padding: 16px;
+}
+.spotify-playlist .card{
+width: 200px;
+padding: 10px;
+border-radius: 5px;
+background-color: #1f1f1f;
+
+}
+.card img{
+    width: 100%;
+    object-fit: contain;
+}
+.card > * {
+    padding-top: 10px;
+}
+.card-container{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+}
