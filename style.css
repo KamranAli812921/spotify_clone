@@ -42,6 +42,19 @@ ul li {
     color: gray;
 }
 .library{
-    min-height: 50vh;
+    min-height: 80vh;
     position: relative;
+}
+.nav img{
+    width: 14px;
+}
+.nav
+{
+    display: flex;
+    /* justify-content: space-between; */
+}
+.header
+{
+    display: flex;
+    justify-content: space-between;
 }
