@@ -1,3 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:opsz,wght@17..18,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sawarabi+Gothic&display=swap');
+
+*{
+    font-family: "Google Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+}
 body
 {
     background-color: black;
@@ -5,7 +13,35 @@ body
 }
 .left{
     width: 25vw;
+    padding: 10px;
 }
 .right{
     width: 75vw;
+}
+ul li {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    width: 14px;
+    padding-top: 20px;
+    font-weight: bold;
+}
+.bg-grey{
+    background-color: #121212;
+
+}
+.footer{
+    display: flex;
+    font-size: 9px;
+    color: gray;
+    gap: 13px;
+    position: absolute;
+    bottom: 0;
+}
+.footer a{
+    color: gray;
+}
+.library{
+    min-height: 50vh;
+    position: relative;
 }
