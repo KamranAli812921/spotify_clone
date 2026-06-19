@@ -141,8 +141,8 @@ background-color: #1f1f1f;
 .playbar{
     position: absolute;
     bottom: 0;
-    width: 100%;
-    background-color: green;
+    width: 90%;
+    background-color: white;
     display: flex;
     justify-content: center;
     padding: 12px;
@@ -151,4 +151,20 @@ background-color: #1f1f1f;
 .playbtn img{
     width: 20px;
     padding: 0 10px;
+}
+.playlist ul{
+    padding: 0 42px;
+}
+.playlist ul li{
+    list-style-type: decimal;
+    padding: 0 12px;
+    display: flex;
+    cursor: pointer;
+    padding: 12px 0;
+}
+.info
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
