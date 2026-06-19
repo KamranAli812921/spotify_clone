@@ -24,10 +24,11 @@ async function main() {
     console.log(song)
     let songUl = document.querySelector(".playlist").getElementsByTagName("ul")[0]
     for (const element of song) {
+        let name = decodeURIComponent(element).trim().replaceAll("_", " ")
         songUl.innerHTML=songUl.innerHTML + `
         <li>
                 <div class="info">
-                  <div>${element.replaceAll("%20", " ")}</div>
+                  <div>${name}</div>
                   <div>Kamran Ali</div>
                 </div>
                 <div class="GreenPlay">

@@ -165,13 +165,12 @@ background-color: #1f1f1f;
     font-size: 12px;
     counter-increment: song;
     list-style-type: decimal;
-    padding: 0 12px;
     width: 100%;
     box-sizing: border-box;
     display: flex;
     cursor: pointer;
     padding: 5px 0;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     margin:  5px 0;
     border-radius: 5px;
     justify-content: space-between;
@@ -182,12 +181,22 @@ background-color: #1f1f1f;
     font-weight: bold;
     color: gray;
 }
-.info
-{
+.info {
     display: flex;
+     min-width: 0;
+    flex-direction: column;   
     justify-content: center;
-    align-items: center;
-    gap: 5px;
+    align-items: flex-start;  
+    gap: 2px;
+}
+.info div:first-child {
+    font-weight: bold;
+    color: white;
+}
+.info div:last-child {
+    font-size: 11px;
+    color: gray;
+    font-weight: normal;
 }
 .GreenPlay {
     display: flex;
@@ -204,4 +213,8 @@ background-color: #1f1f1f;
 
 .GreenPlay img {
     width: 16px;
+}
+.playlist{
+    height: 300px;
+    overflow-y: scroll;
 }
