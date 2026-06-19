@@ -24,7 +24,18 @@ async function main() {
     console.log(song)
     let songUl = document.querySelector(".playlist").getElementsByTagName("ul")[0]
     for (const element of song) {
-        songUl.innerHTML=songUl.innerHTML + `<li>${element.replaceAll("%20", " ")}</li>`
+        songUl.innerHTML=songUl.innerHTML + `
+        <li>
+                <div class="info">
+                  <div>${element.replaceAll("%20", " ")}</div>
+                  <div>Kamran Ali</div>
+                </div>
+                <div class="GreenPlay">
+                <img src="play-button.svg" alt="" />
+                <div class="playnow">Play Now</div>
+                </div>
+              </li>
+              `
         
     }
     var audio=new Audio(song[0])

@@ -5,6 +5,7 @@
     font-family: "Google Sans", sans-serif;
     margin: 0;
     padding: 0;
+    /* font-size: 12px; */
 }
 body
 {
@@ -139,13 +140,14 @@ background-color: #1f1f1f;
     font-size: 17px;
 }
 .playbar{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 90%;
     background-color: white;
     display: flex;
     justify-content: center;
     padding: 12px;
+    
 }
 
 .playbtn img{
@@ -153,18 +155,53 @@ background-color: #1f1f1f;
     padding: 0 10px;
 }
 .playlist ul{
-    padding: 0 42px;
+
+     counter-reset: song; 
+}
+.playlist ul img{
+    width: 25px;
 }
 .playlist ul li{
+    font-size: 12px;
+    counter-increment: song;
     list-style-type: decimal;
     padding: 0 12px;
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     cursor: pointer;
-    padding: 12px 0;
+    padding: 5px 0;
+    border: 1px solid white;
+    margin:  5px 0;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+.playlist ul li::before {
+    content: counter(song) ". "; 
+    font-weight: bold;
+    color: gray;
 }
 .info
 {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 5px;
+}
+.GreenPlay {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #1ED760;        
+    color: black;
+    padding: 5px 12px;
+    border-radius: 20px;             
+    font-weight: bold;
+    white-space: nowrap;              
+    flex-shrink: 0;                 
+}
+
+.GreenPlay img {
+    width: 16px;
 }
