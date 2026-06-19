@@ -22,6 +22,7 @@ body
 .right{
     width: 75vw;
     margin: 20px 0;
+    position: relative;
 }
 ul li {
     list-style: none;
@@ -65,9 +66,11 @@ ul li {
     justify-content: space-between;
     padding: 20px;
     background-color: #2a2a2a;
+    height: 35px;
 }
 .spotify-playlist{
 padding: 16px;
+
 }
 .spotify-playlist .card{
 width: 200px;
@@ -102,4 +105,50 @@ background-color: #1f1f1f;
     right: 20px;
     opacity: 0;
     transition: all 1s ease-out;
+}
+.btn{
+    padding: 0 12px;
+}
+.signupbtn{
+    background-color: #2a2a2a;;
+    color: rgb(98, 88, 88);
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+}
+.signupbtn:hover{
+    font-size: 17px;
+    color: white;
+}
+.loginbtn{
+    background-color: white;
+    color: black;
+    border-radius: 21px;
+    font-size: 16px;
+    padding: 10px;
+    width: 79px;
+    cursor: pointer;
+}
+.loginbtn:hover{
+    font-weight: bold;
+    width: 80px;
+    padding: 10px;
+    font-size: 17px;
+}
+.playbar{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+}
+
+.playbtn img{
+    width: 20px;
+    padding: 0 10px;
 }
