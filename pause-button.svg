@@ -1,0 +1,14 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="60"
+  height="60"
+  viewBox="0 0 100 100"
+  class="pause"
+>
+  <!-- Green circular background -->
+  <circle cx="50" cy="50" r="45" fill="#1ED760" />
+
+  <!-- White pause icon with padding -->
+  <rect x="35" y="30" width="10" height="40" fill="white" rx="2" />
+  <rect x="55" y="30" width="10" height="40" fill="white" rx="2" />
+</svg>

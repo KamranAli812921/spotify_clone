@@ -15,13 +15,22 @@ async function getsongs() {
             songs.push(element.href.split("songs%5C")[1])
             
         }
-        console.log(songs)
+        // console.log(songs)
     }
     return songs
 }
+let currentSong=new Audio()
+const playMusic=(track)=>
+{
+    // let audio=new Audio("/songs/"+track)
+    currentSong.src="/songs/"+track
+    currentSong.play()
+    play.src="pause-button.svg"
+}
+
 async function main() {
     let song=await getsongs()
-    console.log(song)
+    // console.log(song)
     let songUl = document.querySelector(".playlist").getElementsByTagName("ul")[0]
     for (const element of song) {
         let name = decodeURIComponent(element).trim().replaceAll("_", " ")
@@ -39,7 +48,25 @@ async function main() {
               `
         
     }
-    var audio=new Audio(song[0])
-    // audio.play()                           
+    Array.from(document.querySelector(".playlist").getElementsByTagName("li")).forEach(e => {
+        e.addEventListener("click",element=>{
+            console.log(e.querySelector(".info").firstElementChild.innerHTML)
+            playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim())
+
+        })
+    })  
+    
+    play.addEventListener("click",()=>{
+        if(currentSong.paused)
+        {
+            currentSong.play()
+            play.src="pause-button.svg"
+        }
+        else
+            {
+                currentSong.pause()
+                play.src="play-button.svg"
+        }
+    })
 }
 main()

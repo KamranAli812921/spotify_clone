@@ -159,6 +159,8 @@ background-color: #1f1f1f;
 .playbtn img{
     width: 50px;
     padding: 0 10px;
+    margin: 3px;
+    cursor: pointer;
 }
 .playlist ul{
 
@@ -236,14 +238,17 @@ background-color: #1f1f1f;
     border: 2px solid #1ED760;
     position: absolute;
     bottom: 2px;
+    border-radius: 10px;
+    margin: 3px;
 }
 .circle{
     height: 10px;
     width: 10px;
-    /* border: 2px solid #1ED760; */
     border: 2px solid white;
     background-color: white;
     border-radius: 50px;
     position: relative;
     bottom: 5px;
+    left: 0%;
+    transition: left 0.5s;
 }
