@@ -5,6 +5,7 @@
     font-family: "Google Sans", sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     /* font-size: 12px; */
 }
 body
@@ -67,7 +68,7 @@ ul li {
     justify-content: space-between;
     padding: 20px;
     background-color: #2a2a2a;
-    height: 35px;
+    height: 80px;
 }
 .spotify-playlist{
 padding: 16px;
@@ -141,12 +142,13 @@ background-color: #1f1f1f;
 }
 .playbar{
     position: fixed;
-    bottom: 0;
-    width: 90%;
+    bottom: 20px;
+    width: 80%;
     background-color: #2a2a2a;
     display: flex;
     justify-content: center;
     padding: 12px;
+    border-radius: 50px;
     
 }
 
@@ -198,6 +200,11 @@ background-color: #1f1f1f;
     color: gray;
     font-weight: normal;
 }
+.card p {
+    font-size: 11px;
+    color: gray;
+    font-weight: normal;
+}
 .GreenPlay {
     display: flex;
     align-items: center;
@@ -216,5 +223,6 @@ background-color: #1f1f1f;
 }
 .playlist{
     height: 300px;
-    overflow-y: scroll;
+    overflow-y: auto;
+    margin: 10px 0;
 }
