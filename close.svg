@@ -1,0 +1,20 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="50"
+    height="50"
+    viewBox="0 0 100 100"
+>
+    <!-- Green circle -->
+    <circle cx="50" cy="50" r="45" fill="#1ED760"/>
+
+    <!-- White X -->
+    <line x1="32" y1="32" x2="68" y2="68"
+          stroke="white"
+          stroke-width="6"
+          stroke-linecap="round"/>
+
+    <line x1="68" y1="32" x2="32" y2="68"
+          stroke="white"
+          stroke-width="6"
+          stroke-linecap="round"/>
+</svg>
