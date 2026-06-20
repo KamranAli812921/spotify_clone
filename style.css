@@ -289,7 +289,7 @@ background-color: #1f1f1f;
     }
     .seekbar{
 
-        width: 90%;
+        width: 80vw;
     }
     
     .hamburger{
@@ -303,5 +303,6 @@ background-color: #1f1f1f;
         top: 2px;
         right: 2px;
     }
+
     
 }
