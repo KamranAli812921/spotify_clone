@@ -73,7 +73,9 @@ ul li {
 .spotify-playlist{
 padding: 16px;
 
+
 }
+
 .spotify-playlist .card{
 width: 200px;
 padding: 10px;
@@ -143,17 +145,19 @@ background-color: #1f1f1f;
 .playbar{
     position: fixed;
     bottom: 20px;
-    width: 80%;
+    width: 70%;
     background-color: #2a2a2a;
     display: flex;
     justify-content: center;
-    padding: 12px;
+    padding: 5px;
     border-radius: 50px;
+    right: 20px;
+
     
 }
 
 .playbtn img{
-    width: 20px;
+    width: 50px;
     padding: 0 10px;
 }
 .playlist ul{
@@ -225,4 +229,21 @@ background-color: #1f1f1f;
     height: 300px;
     overflow-y: auto;
     margin: 10px 0;
+}
+.seekbar{
+    height: 2px;
+    width: 96%;
+    border: 2px solid #1ED760;
+    position: absolute;
+    bottom: 2px;
+}
+.circle{
+    height: 10px;
+    width: 10px;
+    /* border: 2px solid #1ED760; */
+    border: 2px solid white;
+    background-color: white;
+    border-radius: 50px;
+    position: relative;
+    bottom: 5px;
 }
