@@ -240,6 +240,7 @@ background-color: #1f1f1f;
     bottom: 2px;
     border-radius: 10px;
     margin: 3px;
+    cursor: pointer;
 }
 .circle{
     height: 10px;
@@ -251,4 +252,13 @@ background-color: #1f1f1f;
     bottom: 5px;
     left: 0%;
     transition: left 0.5s;
+}
+.infobar{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.songinfo,.songtime
+{
+    color: #1ED760;
 }
