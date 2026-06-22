@@ -253,7 +253,7 @@ background-color: #1f1f1f;
     position: relative;
     bottom: 5px;
     left: 0%;
-    transition: left 0.5s;
+    transition: left 0.05s;
 }
 .infobar{
     display: flex;

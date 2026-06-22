@@ -114,5 +114,14 @@ async function main() {
 
         }
     })
+
+let volumeSlider = document.getElementById("volumeside");
+
+currentSong.volume = volumeSlider.value / 100;
+
+volumeSlider.addEventListener("input", () => {
+    currentSong.volume = volumeSlider.value / 100;
+    console.log(volumeSlider.value + "%");
+});
 }
 main()
