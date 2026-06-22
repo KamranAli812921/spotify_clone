@@ -270,6 +270,29 @@ background-color: #1f1f1f;
 .close{
     display: none;
 }
+.volumebtn
+{
+    display: flex;
+    align-items: center;
+    width: 240px;
+}
+.volume{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    margin: 0 15px;
+}
+input{
+    width: 80px;
+}
+.range{
+    width: 10px;
+}
+.volume:hover::before{
+
+
+}
 @media (orientation: portrait) {
     .left{
         position: absolute;
@@ -286,10 +309,21 @@ background-color: #1f1f1f;
     }
     .playbar{
         width: 88vw;
+         border-radius: 10px;
+        
+    }
+    .infobar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+       
     }
     .seekbar{
 
         width: 80vw;
+        margin: 10px;
     }
     
     .hamburger{
@@ -302,7 +336,23 @@ background-color: #1f1f1f;
         position: absolute;
         top: 2px;
         right: 2px;
+        
     }
+    .close img {
+        width: 35px;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+    }
+    .volumebtn
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input{
+    width: 120px;
+}
 
     
 }
