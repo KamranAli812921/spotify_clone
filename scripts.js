@@ -67,27 +67,47 @@ function formatTime(time) {
 
     return `${minutes}:${seconds}`;
 }
-let currFolder;
-async function displayAlbum() {
-    let a = await fetch(`http://127.0.0.1:3000/songs/`)   // trailing slash avoids a redirect
+let currFolder;async function displayAlbum() {
+    let a = await fetch(`http://127.0.0.1:3000/songs/`)
     let response = await a.text()
     let div = document.createElement("div")
     div.innerHTML = response
 
     let anchors = div.getElementsByTagName("a")
-    for (let e of anchors) {
-        let clean = decodeURIComponent(e.href).replace(/\\/g, "/")   // kill the backslashes
+    let cardContainer = document.querySelector(".card-container")
+    let cardsHTML = ""                       // accumulate here
 
-        // keep only links that go INTO songs/ and aren't files
+    for (let e of anchors) {
+        let clean = decodeURIComponent(e.href).replace(/\\/g, "/")
+
         if (clean.includes("/songs/") && !clean.endsWith(".mp3")) {
-            let parts = clean.split("/").filter(Boolean)   // drop empty segments
-            let folder = parts[parts.length - 1]           // deepest segment = album name
+            let parts = clean.split("/").filter(Boolean)
+            let folder = parts[parts.length - 1]
 
             if (folder && folder !== "songs" && !folder.includes(":")) {
-                console.log(folder)                         
+                try {
+                    let res = await fetch(`http://127.0.0.1:3000/songs/${folder}/info.json`)
+                    let info = await res.json()
+
+                    cardsHTML += `
+                    <div data-folder="${folder}" class="card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                             viewBox="0 0 100 100" class="play">
+                            <circle cx="50" cy="50" r="45" fill="#1ED760" />
+                            <path d="M40 30 L40 70 L72 50 Z" fill="white" />
+                        </svg>
+                        <img src="/songs/${folder}/cover.jpg" alt="" />
+                        <h2>${info.title}</h2>
+                        <p>${info.discription}</p>
+                    </div>`
+                } catch (err) {
+                    console.warn(`Skipping "${folder}" — no valid info.json`, err)
+                }
             }
         }
     }
+
+    cardContainer.innerHTML = cardsHTML       // set ONCE, after the loop
 }
 async function main() {
     await getsongs("songs/ncs")
@@ -146,12 +166,27 @@ volumeSlider.addEventListener("input", () => {
     currentSong.volume = volumeSlider.value / 100;
     // console.log(volumeSlider.value + "%");
 });
-Array.from(document.getElementsByClassName("card")).forEach(element => {
-    element.addEventListener("click", async item=>{
-         songs = await getsongs(`songs/${item.currentTarget.dataset.folder}`)
-         
-    })
-    
-});
+document.querySelector(".card-container").addEventListener("click", async e => {
+    let card = e.target.closest(".card")
+    if (!card) return
+    await getsongs(`songs/${card.dataset.folder}`)
+    playMusic(songs[0], true)
+})
+document.querySelector(".volume> img").addEventListener("click",e=>{
+    console.log(e.target)
+    if (e.target.src.includes("volume.svg"))
+    {
+        e.target.src=e.target.src.replace("volume.svg","mute.svg")
+        currentSong.volume=0
+        volumeSlider.value=0
+
+    }
+    else{
+         e.target.src=e.target.src.replace("mute.svg","volume.svg")
+        currentSong.volume=0.10
+        volumeSlider.value=10
+
+    }
+})
 }
 main()

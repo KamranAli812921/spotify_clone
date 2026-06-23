@@ -1,0 +1,34 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="40"
+    height="40"
+    viewBox="0 0 24 24"
+    fill="none"
+>
+    <!-- Speaker -->
+    <path
+        d="M5 9H9L14 5V19L9 15H5V9Z"
+        fill="#1ED760"
+    />
+
+    <!-- Mute X -->
+    <line
+        x1="17"
+        y1="9"
+        x2="21"
+        y2="13"
+        stroke="#1ED760"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+
+    <line
+        x1="21"
+        y1="9"
+        x2="17"
+        y2="13"
+        stroke="#1ED760"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+</svg>
