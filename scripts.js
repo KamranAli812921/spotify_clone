@@ -12,9 +12,9 @@ async function getsongs(folder) {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split(`/${currFolder}/`)[1])
-
-        }
+    let clean = decodeURIComponent(element.href).replace(/\\/g, "/")
+    songs.push(clean.split("/").pop())
+}
         // console.log(songs)
     }
     return songs
@@ -45,9 +45,9 @@ function formatTime(time) {
 }
 let song;
 let currFolder;
+let address="songs/ncs"
 async function main() {
-    song = await getsongs("songs/ncs")
-   
+    song = await getsongs(address)
     playMusic(song[0],true)
     // console.log(song)
     let songUl = document.querySelector(".playlist").getElementsByTagName("ul")[0]
