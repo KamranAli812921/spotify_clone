@@ -29,7 +29,7 @@ async function getsongs(folder) {
                   <div>Kamran Ali</div>
                 </div>
                 <div class="GreenPlay">
-                <img src="play-button.svg" alt="" />
+                <img src="Assets/play-button.svg" alt="" />
                 <div class="playnow">Play Now</div>
                 </div>
               </li>
@@ -49,10 +49,10 @@ const playMusic = (track, pause=false) => {
     currentSong.src = `/${currFolder}/` + track
     if (!pause) {
         currentSong.play()
-        play.src = "pause-button.svg"
+        play.src = "Assets/pause-button.svg"
     }
     else{
-        play.src="play-button.svg"
+        play.src="Assets/play-button.svg"
     }
     document.querySelector(".songinfo").innerHTML = decodeURI(track)
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00"
@@ -119,11 +119,11 @@ async function main() {
     play.addEventListener("click", () => {
         if (currentSong.paused) {
             currentSong.play()
-            play.src = "pause-button.svg"
+            play.src = "Assets/pause-button.svg"
         }
         else {
             currentSong.pause()
-            play.src = "play-button.svg"
+            play.src = "Assets/play-button.svg"
         }
     })
     currentSong.addEventListener("timeupdate", () => {
@@ -174,15 +174,15 @@ document.querySelector(".card-container").addEventListener("click", async e => {
 })
 document.querySelector(".volume> img").addEventListener("click",e=>{
     console.log(e.target)
-    if (e.target.src.includes("volume.svg"))
+    if (e.target.src.includes("Assets/volume.svg"))
     {
-        e.target.src=e.target.src.replace("volume.svg","mute.svg")
+        e.target.src=e.target.src.replace("Assets/volume.svg","Assets/mute.svg")
         currentSong.volume=0
         volumeSlider.value=0
 
     }
     else{
-         e.target.src=e.target.src.replace("mute.svg","volume.svg")
+         e.target.src=e.target.src.replace("Assets/mute.svg","Assets/volume.svg")
         currentSong.volume=0.10
         volumeSlider.value=10
 
