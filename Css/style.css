@@ -312,6 +312,11 @@ input{
         z-index: 1;
         width:99vw;
     }
+    .card-container{
+        display: flex;
+        justify-content: center;
+
+    }
     li .GreenPlay{
         display: none;
     }
