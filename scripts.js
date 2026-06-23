@@ -1,6 +1,7 @@
 console.log("Lets write javascripts")
-async function getsongs() {
-    let a = await fetch("http://127.0.0.1:3000/songs/")
+async function getsongs(folder) {
+    currFolder=folder
+    let a = await fetch(`http://127.0.0.1:3000/${currFolder}/`)
     let response = await a.text()
     // console.log(response)   
     let div = document.createElement("div")
@@ -11,7 +12,7 @@ async function getsongs() {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split("songs%5C")[1])
+            songs.push(element.href.split(`/${currFolder}/`)[1])
 
         }
         // console.log(songs)
@@ -21,7 +22,7 @@ async function getsongs() {
 let currentSong = new Audio()
 const playMusic = (track, pause=false) => {
     // let audio=new Audio("/songs/"+track)
-    currentSong.src = "/songs/" + track
+    currentSong.src = `/${currFolder}/` + track
     if (!pause) {
         currentSong.play()
         play.src = "pause-button.svg"
@@ -43,8 +44,9 @@ function formatTime(time) {
     return `${minutes}:${seconds}`;
 }
 let song;
+let currFolder;
 async function main() {
-    song = await getsongs()
+    song = await getsongs("songs/ncs")
    
     playMusic(song[0],true)
     // console.log(song)
@@ -82,7 +84,7 @@ async function main() {
         }
     })
     currentSong.addEventListener("timeupdate", () => {
-        console.log(currentSong.currentTime, currentSong.duration)
+        // console.log(currentSong.currentTime, currentSong.duration)
         document.querySelector(".songtime").innerHTML = `${formatTime(currentSong.currentTime)} / ${formatTime(currentSong.duration)}`
         document.querySelector(".circle").style.left=(currentSong.currentTime/currentSong.duration)*100+"%"
     })
@@ -121,7 +123,7 @@ currentSong.volume = volumeSlider.value / 100;
 
 volumeSlider.addEventListener("input", () => {
     currentSong.volume = volumeSlider.value / 100;
-    console.log(volumeSlider.value + "%");
+    // console.log(volumeSlider.value + "%");
 });
 }
 main()
